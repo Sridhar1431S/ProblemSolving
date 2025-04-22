@@ -1,4 +1,5 @@
 #3D prime number 
+
 '''def is_prime(x):
     if x < 2:
         return False
@@ -18,6 +19,7 @@ while len(result) < n:
     i += 1
 print(result)'''
 #password
+
 '''n=input("Enter number")
 up,dg,sp,lp=0,0,0,0
 if len(n)>7:
@@ -37,6 +39,7 @@ if len(n)>7:
 else:
     print("enter the password of length above 7")'''
 #spiral matrix
+
 '''a = [[1, 2, 3, 4, 5, 6],
      [7, 8, 9, 10, 11, 12],
      [30, 31, 32, 13, 14, 15],
@@ -63,6 +66,7 @@ while top <= bt and left <= right:
         left += 1'''
 #output: 1 2 3 4 5 6 12 15 21 27 26 25 24 23 22 16 30 7 8 9 10 11 14 20 19 18 17 31 32 13 
 #Recursion
+
 '''def flower(a):
     if a==4:
         return
@@ -90,6 +94,7 @@ raju(5)'''
 n=int(input("enter the number"))
 prime(n)'''
 #using two arguments
+
 '''def prime(n,a):
     if n==1:
         return
@@ -114,6 +119,7 @@ for i in range(len(s)):
            c=1
 print(r)'''
 #Flames
+
 '''n=input().strip()
 k=input().strip()
 l1=list(n)
@@ -141,6 +147,7 @@ c=0
 x=sum(1 for i in a if i!=2)
 print(x)'''
 #finding a number is roundnumber or not
+
 '''def isround(n):
     r=[]
     while n!=1:
@@ -151,6 +158,7 @@ print(x)'''
     return True
 print(isround(19))'''
 #Ranking of students
+
 '''list = [
     {"name": "raju", "age": 28, "marks": [45, 50, 60, 70]},
     {"name": "ravi", "age": 26, "marks": [50, 60, 70, 80]},
@@ -201,6 +209,7 @@ for i in range(1,n+1):
 55 * 54 * 53 * 52 * 51 * 50 * 49 * 48 * 47 * 46 
 '''
 #running digital clock
+
 '''from datetime import datetime
 import pytz
 a=pytz.timezone('India/AndhraPradesh')
