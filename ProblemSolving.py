@@ -232,3 +232,134 @@ while 1:
         h+=1
     elif h==24:
         h=0'''
+#Global variable is classified into two variables one is instance(non-static) and class(static).
+#giving user input at compile time.
+'''class Student:
+    def marks(self,m1,m2):
+        self.m1=m1
+        self.m2=m2
+    def average(self):
+        average=(m1+m2)/2
+        return average
+n=int(input("enter no of students"))
+l=[]
+for i in range(n):
+    r=Student()
+    m1=int(input("enter the marks of student{}".format(i+1)))
+    m2=int(input("enter the marks of student{}".format(i+1)))
+    r.marks(m1,m2)
+    l.append(r)
+index=0
+for i in l:
+    index+=1
+    res=i.average()
+    print("Average of student {} is {}".format(index,res))'''
+#output: 
+'''enter no of students2
+enter the marks of student150
+enter the marks of student140
+enter the marks of student260
+enter the marks of student270
+Average of student 1 is 65.0
+Average of student 2 is 65.0'''
+#implementation of singly linked list
+'''class Node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+class Linkedlist:
+        def __init__(self):
+             self.Head=None
+        def insert(self,val):
+            if not self.Head:
+                  new_node=Node(val)
+                  self.Head=new_node
+            else:
+                temp=self.Head
+                while temp.next:
+                      temp=temp.next
+                new_node=Node(val)
+                temp.next=new_node
+            print("{} is successfully inserted".format(val))
+        def display(self):
+            res=[]
+            temp=self.Head
+            while temp:
+                 res.append(temp.val)
+                 temp=temp.next
+            print("->".join(map(str,res)))
+        def delete(self,val):
+            temp=self.Head
+            prev=None
+            while temp:
+                 if temp.val==val:
+                      if prev:
+                           prev.next=temp.next
+                      else:
+                           self.Head=temp.next
+                      print("{} is successfully deleted".format(val))
+                      return
+                 prev=temp
+                 temp=temp.next
+            print("{} not found on l)ist".format(val))
+        def insertAtpos(self):
+             
+r=Linkedlist()
+r.insert(100)
+r.insert(200)
+r.insert(300)
+r.insert(400)
+r.insertAtpos(500,2)
+r.display()
+r.delete(int(input("Enter number to delete: ")))'''
+#Ouput:
+'''
+100 is successfully inserted
+200 is successfully inserted
+300 is successfully inserted
+400 is successfully inserted
+100->200->300->400
+'''  
+def evaluate(s):
+    nums = []
+    symbol = []
+    precedence = {"+": 1, "-": 1, "*": 2, "/": 2}
+
+    def apply_op():
+        op = symbol.pop()
+        right = nums.pop()
+        left = nums.pop()
+        if op == '+':
+            nums.append(left + right)
+        elif op == '-':
+            nums.append(left - right)
+        elif op == '*':
+            nums.append(left * right)
+        elif op == '/':
+            nums.append(left / right)
+
+    i = 0
+    while i < len(s):
+        if s[i].isdigit():
+            num_str = ""
+            while i < len(s) and s[i].isdigit():
+                num_str += s[i]
+                i += 1
+            nums.append(int(num_str))
+            continue
+        elif s[i] in precedence:
+            while symbol and precedence[symbol[-1]] >= precedence[s[i]]:
+                apply_op()
+            symbol.append(s[i])
+            i += 1
+        else:
+            i += 1
+
+    while symbol:
+        apply_op()
+
+    return nums[0]
+
+n = "10+2/3+4-2"
+r = evaluate(n)
+print(int(r))
