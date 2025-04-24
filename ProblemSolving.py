@@ -1,4 +1,4 @@
-#3D prime number 
+##3D prime number 
 
 '''def is_prime(x):
     if x < 2:
@@ -18,6 +18,7 @@ while len(result) < n:
             result.append(i)
     i += 1
 print(result)'''
+
 #password
 
 '''n=input("Enter number")
