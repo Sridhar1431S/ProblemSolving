@@ -310,6 +310,13 @@ r.insert(300)
 r.insert(400)
 r.display()
 r.delete(int(input("Enter number to delete: ")))
+#output
+100 is successfully inserted
+200 is successfully inserted
+300 is successfully inserted
+400 is successfully inserted
+100->200->300->400
+
 #Evaluating the Expression
 
 def evaluate(s):
@@ -355,3 +362,5 @@ def evaluate(s):
 n = "10+2/3+4-2"
 r = evaluate(n)
 print(int(r))
+# **Printing the data of students in table format.**
+#Checking valid parenthesis
