@@ -319,7 +319,9 @@ r.delete(int(input("Enter number to delete: ")))'''
 300 is successfully inserted
 400 is successfully inserted
 100->200->300->400
-'''  
+'''
+#Evaluating the Expression
+
 def evaluate(s):
     nums = []
     symbol = []
