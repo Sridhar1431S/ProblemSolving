@@ -360,7 +360,124 @@ def evaluate(s):
     return nums[0]
 
 n = "10+2/3+4-2"
+
+#Checking valid parenthesis
+
+'''class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        mapping = {")": "(", "}": "{", "]": "["}
+
+        for char in s:
+            if char in mapping: 
+                top_element = stack.pop() if stack else '#'
+                if mapping[char] != top_element:
+                    return False
+            else:  
+                stack.append(char)
+
+        return not stack'''
+#Task Scheduling using round robin method
+'''from collections import deque
+def find(tasks,time_slice):
+    Q=deque()
+    for i in range(len(tasks)):
+'''
+
+#Printing the data of students in table format.
+
+'''students={1:{"name":"sridhar","age":20,"gen":"male","dept":"CSE"},
+          2:{"name":"sridharreddy","age":20,"gen":"male","dept":"CSE"},
+          3:{"name":"sridhar","age":20,"gen":"male","dept":"CSE"},
+          4:{"name":"sridhar","age":20,"gen":"male","dept":"CSE"}}
+print("-"*45)
+print("{:<5}|{:<15}|{:<7}|{:<7}|{:<7}|".format("ID","NAME","AGE","GEN","DEPT"))
+print("-"*45)
+for id,info in students.items():
+    print("{:<5}|{:<15}|{:<7}|{:<7}|{:<7}|".format((id),info["name"],info["age"],info["gen"],info["dept"]))'''
+#output:
+'''
+---------------------------------------------
+ID   |NAME           |AGE    |GEN    |DEPT   |
+---------------------------------------------
+1    |sridhar        |20     |male   |CSE    |
+2    |sridharreddy   |20     |male   |CSE    |
+3    |sridhar        |20     |male   |CSE    |
+4    |sridhar        |20     |male   |CSE    |
+'''
+
+#finding day
+
+'''import calendar
+d=calendar.weekday(2025,4,24)
+days=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+print(days[d])'''
+#finding how many days you lived
+'''from datetime import date
+birth_date = date(2004, 11, 16)  
+today = date.today()
+days_lived = (today - birth_date).days
+print(f"You have lived {days_lived} days.")'''
+
+#
+
+'''from collections import deque
+n= [1,3,-1,-3,5,3,6,7]
+k = 3
+Q=deque()
+i=0
+res=[]
+while i<len(n):
+    Q.append(i)
+    if len(Q)<=3:
+        l=max(Q)
+        res.append(l)
+    Q.popleft()
+print(res)'''
+
+#mind game
+
+'''import random
+name1=input("enter player 1")
+name2=input("enter player 2")
+print("computer has fixed 5 number of integers in its mind")
+print("you both have 3 chances to guess it")
+print("Ready for the game")
+random_number = random.randint(1, 11)
+print("Random number:", random_number)
+r= [random.randint(1, 11) for _ in range(1,11)]
+s=set(r)
+print("List:", s)
+s1=0
+s2=0
+p1=[]
+p2=[]
+for i in range(1,4):
+    f=int(input("enter the choice {} of {}".format(i,name1)))
+    if f in p1:
+        print("Already Choosen")
+        f=int(input())
+    if f in s:
+        print("correct")
+        s1+=1
+    else:
+        print("wrong")
+    g=int(input("enter the choice {} of {}".format(i,name2)))
+    if g in p2:
+        print("Already Choosen")
+        g=int(input())
+    if g in s:
+        print("correct")
+        s2+=1
+    else:
+        print("wrong")
+if s1>s2:
+    print("{} is the winner".format(name1))
+elif s1<s2:
+    print("{} is the winner".format(name2))
+else:
+      print("it is tie")'''
 r = evaluate(n)
 print(int(r))
-# **Printing the data of students in table format.**
-#Checking valid parenthesis
+
+
