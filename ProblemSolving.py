@@ -1,12 +1,13 @@
-""3D prime number**
+#3D prime number
 
-'''def is_prime(x):
+def is_prime(x):
     if x < 2:
         return False
-    for i in range(2,int(x**0.5+1)):
+    for i in range(2, int(x**0.5+1)):
         if x % i == 0:
             return False
     return True
+
 n = int(input("Enter number:"))
 result = []
 i = 2 
@@ -16,12 +17,12 @@ while len(result) < n:
         digit_count = len(str(i))
         if is_prime(digit_sum) and is_prime(digit_count):
             result.append(i)
-    i += 1
-print(result)'''
+    i += 1
+print(result)
 
 #password
 
-'''n=input("Enter number")
+n=input("Enter number")
 up,dg,sp,lp=0,0,0,0
 if len(n)>7:
     for i in n:
@@ -38,10 +39,11 @@ if len(n)>7:
     else:
         print("Bad password")
 else:
-    print("enter the password of length above 7")'''
+    print("enter the password of length above 7")
+    
 #spiral matrix
 
-'''a = [[1, 2, 3, 4, 5, 6],
+a = [[1, 2, 3, 4, 5, 6],
      [7, 8, 9, 10, 11, 12],
      [30, 31, 32, 13, 14, 15],
      [16, 17, 18, 19, 20, 21],
@@ -64,28 +66,36 @@ while top <= bt and left <= right:
     if left <= right:
         for f in range(bt, top-1,-1):
             print(a[f][left], end=" ")
-        left += 1'''
-#output: 1 2 3 4 5 6 12 15 21 27 26 25 24 23 22 16 30 7 8 9 10 11 14 20 19 18 17 31 32 13 
+        left += 1
+        
+Output:
+1 2 3 4 5 6 12 15 21 27 26 25 24 23 22 16 30 7 8 9 10 11 14 20 19 18 17 31 32 13
+
 #Recursion
 
-'''def flower(a):
+def flower(a):
     if a==4:
         return
     print(a+10,end=" ")
-    flower(a+1) #here again a will increment and goes to starting until a==4. and a will be backtracked
+    flower(a+1)
     print(a,end=" ")
-flower(1)'''
-#output:11 12 13 3 2 1 
-'''def raju(a):
+flower(1)
+
+Output: 11 12 13 3 2 1
+#
+
+def raju(a):
     if a==1:
         return
     raju(a-1)
     print('hai',end=" ")
     raju(a-1)
-raju(5)'''
+raju(5)
+Output: hai hai hai hai hai hai hai hai hai hai hai hai hai hai hai
 
-#output:hai hai hai hai hai hai hai hai hai hai hai hai hai hai hai
-'''def prime(n):
+#prime logic
+
+def prime(n):
     for i in range(2,n):
         if n%i==0:
             for j in range(2,i+1):
@@ -93,10 +103,10 @@ raju(5)'''
                     break
                 print(j)
 n=int(input("enter the number"))
-prime(n)'''
+prime(n)
 #using two arguments
 
-'''def prime(n,a):
+def prime(n,a):
     if n==1:
         return
     i=2
@@ -106,9 +116,11 @@ prime(n)'''
     prime(n//i,a)
 n=int(input("enter the number"))
 prime(n,2)
-'''
-#output: 3 5 5
-'''s=input().strip()
+Output: 3 5 5
+
+#String compression
+
+s=input().strip()
 c=1
 r=""
 for i in range(len(s)):
@@ -118,10 +130,10 @@ for i in range(len(s)):
            r=r+s[i]
            r=r+str(c)
            c=1
-print(r)'''
+print(r)
 #Flames
 
-'''n=input().strip()
+n=input().strip()
 k=input().strip()
 l1=list(n)
 l2=list(k)
@@ -140,16 +152,16 @@ c=x+z
 while len(l3)!=1:
     i=(i+(c-i))%len(l3)
     l3.pop(i)
-print(l3)'''
+print(l3)
+#count elements
 
-#count
-'''a=[1,2,2,2,3,4,5]
+a=[1,2,2,2,3,4,5]
 c=0
 x=sum(1 for i in a if i!=2)
-print(x)'''
+print(x)
 #finding a number is roundnumber or not
 
-'''def isround(n):
+def isround(n):
     r=[]
     while n!=1:
         if n in r:
@@ -157,10 +169,10 @@ print(x)'''
         r.append(n)
         n=sum(int(i)**2 for i in str(n))
     return True
-print(isround(19))'''
+print(isround(19))
 #Ranking of students
 
-'''list = [
+list = [
     {"name": "raju", "age": 28, "marks": [45, 50, 60, 70]},
     {"name": "ravi", "age": 26, "marks": [50, 60, 70, 80]},
     {"name": "ram", "age": 27, "marks": [55, 75, 85, 80]},
@@ -175,9 +187,10 @@ print(averages)
 r=1
 for name in averages:
     print(f"{name} has scored {average:.2f} percentage and stands in {r}")
-    r+=1'''
-#printing pattern 
-'''n=int(input("enter number"))
+    r+=1
+#printing pattern
+
+n=int(input("enter number"))
 num=1
 for i in range(1,n+1):
     if i%2!=0:
@@ -195,29 +208,17 @@ for i in range(1,n+1):
                 print("*",end=" ")
             temp-=1
             num+=1
-        print()'''
-#output: 
-'''
-1 
-3 * 2 
-4 * 5 * 6 
-10 * 9 * 8 * 7 
-11 * 12 * 13 * 14 * 15 
-21 * 20 * 19 * 18 * 17 * 16 
-22 * 23 * 24 * 25 * 26 * 27 * 28 
-36 * 35 * 34 * 33 * 32 * 31 * 30 * 29 
-37 * 38 * 39 * 40 * 41 * 42 * 43 * 44 * 45 
-55 * 54 * 53 * 52 * 51 * 50 * 49 * 48 * 47 * 46 
-'''
+        print()
 #running digital clock
 
-'''from datetime import datetime
+from datetime import datetime
 import pytz
 a=pytz.timezone('India/AndhraPradesh')
 b=datetime.now(a)
-print(b)'''
+print(b)
 #running digital clock
-'''import time
+
+import time
 h=0
 m=0
 s=0
@@ -232,16 +233,19 @@ while 1:
         m=0
         h+=1
     elif h==24:
-        h=0'''
+        h=0
 #Global variable is classified into two variables one is instance(non-static) and class(static).
+
 #giving user input at compile time.
-'''class Student:
+
+class Student:
     def marks(self,m1,m2):
         self.m1=m1
         self.m2=m2
     def average(self):
-        average=(m1+m2)/2
+        average=(self.m1+self.m2)/2
         return average
+
 n=int(input("enter no of students"))
 l=[]
 for i in range(n):
@@ -250,24 +254,19 @@ for i in range(n):
     m2=int(input("enter the marks of student{}".format(i+1)))
     r.marks(m1,m2)
     l.append(r)
+
 index=0
 for i in l:
     index+=1
     res=i.average()
-    print("Average of student {} is {}".format(index,res))'''
-#output: 
-'''enter no of students2
-enter the marks of student150
-enter the marks of student140
-enter the marks of student260
-enter the marks of student270
-Average of student 1 is 65.0
-Average of student 2 is 65.0'''
+    print("Average of student {} is {}".format(index,res))
 #implementation of singly linked list
-'''class Node:
+
+class Node:
     def __init__(self,val):
         self.val=val
         self.next=None
+
 class Linkedlist:
         def __init__(self):
              self.Head=None
@@ -302,25 +301,15 @@ class Linkedlist:
                       return
                  prev=temp
                  temp=temp.next
-            print("{} not found on l)ist".format(val))
-        def insertAtpos(self):
-             
+            print("{} not found on list".format(val))
+
 r=Linkedlist()
 r.insert(100)
 r.insert(200)
 r.insert(300)
 r.insert(400)
-r.insertAtpos(500,2)
 r.display()
-r.delete(int(input("Enter number to delete: ")))'''
-#Ouput:
-'''
-100 is successfully inserted
-200 is successfully inserted
-300 is successfully inserted
-400 is successfully inserted
-100->200->300->400
-'''
+r.delete(int(input("Enter number to delete: ")))
 #Evaluating the Expression
 
 def evaluate(s):
