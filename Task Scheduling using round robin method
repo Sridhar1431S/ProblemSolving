@@ -5,24 +5,4 @@ def find(tasks,time_slice):
     for i in range(len(tasks)):
 '''
 
-#Printing the data of students in table format.
 
-'''students={1:{"name":"sridhar","age":20,"gen":"male","dept":"CSE"},
-          2:{"name":"sridharreddy","age":20,"gen":"male","dept":"CSE"},
-          3:{"name":"sridhar","age":20,"gen":"male","dept":"CSE"},
-          4:{"name":"sridhar","age":20,"gen":"male","dept":"CSE"}}
-print("-"*45)
-print("{:<5}|{:<15}|{:<7}|{:<7}|{:<7}|".format("ID","NAME","AGE","GEN","DEPT"))
-print("-"*45)
-for id,info in students.items():
-    print("{:<5}|{:<15}|{:<7}|{:<7}|{:<7}|".format((id),info["name"],info["age"],info["gen"],info["dept"]))'''
-#output:
-'''
----------------------------------------------
-ID   |NAME           |AGE    |GEN    |DEPT   |
----------------------------------------------
-1    |sridhar        |20     |male   |CSE    |
-2    |sridharreddy   |20     |male   |CSE    |
-3    |sridhar        |20     |male   |CSE    |
-4    |sridhar        |20     |male   |CSE    |
-'''
