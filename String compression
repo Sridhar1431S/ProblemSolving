@@ -1,0 +1,13 @@
+#String compression
+
+s=input().strip()
+c=1
+r=""
+for i in range(len(s)):
+       if i+1<len(s) and s[i]==s[i+1]:
+        c+=1
+       else:
+           r=r+s[i]
+           r=r+str(c)
+           c=1
+print(r)
