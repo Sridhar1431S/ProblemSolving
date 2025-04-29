@@ -1,0 +1,56 @@
+#implementation of singly linked list
+
+class Node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+
+class Linkedlist:
+        def __init__(self):
+             self.Head=None
+        def insert(self,val):
+            if not self.Head:
+                  new_node=Node(val)
+                  self.Head=new_node
+            else:
+                temp=self.Head
+                while temp.next:
+                      temp=temp.next
+                new_node=Node(val)
+                temp.next=new_node
+            print("{} is successfully inserted".format(val))
+        def display(self):
+            res=[]
+            temp=self.Head
+            while temp:
+                 res.append(temp.val)
+                 temp=temp.next
+            print("->".join(map(str,res)))
+        def delete(self,val):
+            temp=self.Head
+            prev=None
+            while temp:
+                 if temp.val==val:
+                      if prev:
+                           prev.next=temp.next
+                      else:
+                           self.Head=temp.next
+                      print("{} is successfully deleted".format(val))
+                      return
+                 prev=temp
+                 temp=temp.next
+            print("{} not found on list".format(val))
+
+r=Linkedlist()
+r.insert(100)
+r.insert(200)
+r.insert(300)
+r.insert(400)
+r.display()
+r.delete(int(input("Enter number to delete: ")))
+#output
+100 is successfully inserted
+200 is successfully inserted
+300 is successfully inserted
+400 is successfully inserted
+100->200->300->400
