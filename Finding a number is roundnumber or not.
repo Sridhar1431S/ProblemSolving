@@ -1,0 +1,11 @@
+#finding a number is roundnumber or not
+
+def isround(n):
+    r=[]
+    while n!=1:
+        if n in r:
+            return False
+        r.append(n)
+        n=sum(int(i)**2 for i in str(n))
+    return True
+print(isround(19))
