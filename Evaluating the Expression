@@ -1,0 +1,43 @@
+#Evaluating the Expression
+
+def evaluate(s):
+    nums = []
+    symbol = []
+    precedence = {"+": 1, "-": 1, "*": 2, "/": 2}
+
+    def apply_op():
+        op = symbol.pop()
+        right = nums.pop()
+        left = nums.pop()
+        if op == '+':
+            nums.append(left + right)
+        elif op == '-':
+            nums.append(left - right)
+        elif op == '*':
+            nums.append(left * right)
+        elif op == '/':
+            nums.append(left / right)
+
+    i = 0
+    while i < len(s):
+        if s[i].isdigit():
+            num_str = ""
+            while i < len(s) and s[i].isdigit():
+                num_str += s[i]
+                i += 1
+            nums.append(int(num_str))
+            continue
+        elif s[i] in precedence:
+            while symbol and precedence[symbol[-1]] >= precedence[s[i]]:
+                apply_op()
+            symbol.append(s[i])
+            i += 1
+        else:
+            i += 1
+
+    while symbol:
+        apply_op()
+
+    return nums[0]
+
+n = "10+2/3+4-2"
