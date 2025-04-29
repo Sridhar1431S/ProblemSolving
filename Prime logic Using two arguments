@@ -1,0 +1,13 @@
+#using two arguments
+
+def prime(n,a):
+    if n==1:
+        return
+    i=2
+    while n%i!=0:
+        i+=1
+    print(i,end=" ")
+    prime(n//i,a)
+n=int(input("enter the number"))
+prime(n,2)
+Output: 3 5 5
