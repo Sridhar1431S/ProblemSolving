@@ -1,0 +1,21 @@
+#Recursion
+
+def flower(a):
+    if a==4:
+        return
+    print(a+10,end=" ")
+    flower(a+1)
+    print(a,end=" ")
+flower(1)
+
+Output: 11 12 13 3 2 1
+#
+
+def raju(a):
+    if a==1:
+        return
+    raju(a-1)
+    print('hai',end=" ")
+    raju(a-1)
+raju(5)
+Output: hai hai hai hai hai hai hai hai hai hai hai hai hai hai hai
