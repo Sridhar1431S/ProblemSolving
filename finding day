@@ -1,0 +1,12 @@
+#finding day
+
+'''import calendar
+d=calendar.weekday(2025,4,24)
+days=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+print(days[d])'''
+#finding how many days you lived
+'''from datetime import date
+birth_date = date(2004, 11, 16)  
+today = date.today()
+days_lived = (today - birth_date).days
+print(f"You have lived {days_lived} days.")'''
