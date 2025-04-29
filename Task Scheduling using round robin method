@@ -1,8 +1,24 @@
-#Task Scheduling using round robin method
-'''from collections import deque
-def find(tasks,time_slice):
-    Q=deque()
-    for i in range(len(tasks)):
-'''
+from collections import deque
+b = deque()
+
+def Find(a, time):
+    for i in range(len(a)):
+        b.append((a[i], i + 1))
+    current_time = 0
+    iterations = len(a)
+    
+    while iterations > 0:
+        task, task_num = b.popleft()
+        execute_time = min(task, time)
+        current_time += execute_time
+        print(f"Task {task_num} ---> executed {execute_time} units: time {current_time}")
+        if task > execute_time:
+            b.append((task - execute_time, task_num))
+        else:
+            iterations -= 1
+
+a = [10, 5, 8]
+time = 4
+Find(a, time)
 
 
