@@ -1,0 +1,18 @@
+#Ranking of students
+
+list = [
+    {"name": "raju", "age": 28, "marks": [45, 50, 60, 70]},
+    {"name": "ravi", "age": 26, "marks": [50, 60, 70, 80]},
+    {"name": "ram", "age": 27, "marks": [55, 75, 85, 80]},
+]
+averages = {}
+for student in list:
+    name = student["name"]
+    marks = student["marks"]
+    average = sum(marks) / len(marks)
+    averages[name] = average
+print(averages)
+r=1
+for name in averages:
+    print(f"{name} has scored {average:.2f} percentage and stands in {r}")
+    r+=1
