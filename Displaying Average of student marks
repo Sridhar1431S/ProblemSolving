@@ -1,0 +1,26 @@
+#Global variable is classified into two variables one is instance(non-static) and class(static).
+
+#giving user input at compile time.
+
+class Student:
+    def marks(self,m1,m2):
+        self.m1=m1
+        self.m2=m2
+    def average(self):
+        average=(self.m1+self.m2)/2
+        return average
+
+n=int(input("enter no of students"))
+l=[]
+for i in range(n):
+    r=Student()
+    m1=int(input("enter the marks of student{}".format(i+1)))
+    m2=int(input("enter the marks of student{}".format(i+1)))
+    r.marks(m1,m2)
+    l.append(r)
+
+index=0
+for i in l:
+    index+=1
+    res=i.average()
+    print("Average of student {} is {}".format(index,res))
