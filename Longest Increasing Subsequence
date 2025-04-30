@@ -1,0 +1,27 @@
+from typing import List
+class Solution:
+    def lengthOfLIS(self, nums: List[int]):
+        if not nums:
+            return 0
+        dp = [1] * len(nums) 
+        for i in range(len(nums)):
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    dp[i] = max(dp[i], dp[j] + 1)
+        
+        return max(dp)
+
+
+
+Explaination:
+Index (i)	nums[i]	dp[i]	LIS ending at i
+0	          10	    1	     [10]
+1	          9	      1	     [9]
+2	          2	      1	     [2]
+3	          5	      2	    [2, 5]
+4	          3	      2	    [2, 3]
+5	          7	      3	   [2, 5, 7]
+6	         101	    4	 [2, 5, 7, 101]
+7	         18	      4	  [2, 5, 7, 18]
+
+max(dp) = 4, so the result is 4.
