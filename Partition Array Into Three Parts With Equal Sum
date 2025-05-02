@@ -1,0 +1,32 @@
+class Solution:
+    def canThreePartsEqualSum(self, arr: List[int]):
+        target = sum(arr) // 3
+        s = 0
+        l = []
+        m = []
+        k = []
+        index = 0
+        while index < len(arr):
+            s += arr[index]
+            l.append(arr[index])
+            index += 1
+            if s == target:
+                break
+        s = 0
+        while index < len(arr):
+            s += arr[index]
+            m.append(arr[index])
+            index += 1
+            if s == target:
+                break
+        s = 0
+        while index < len(arr):
+            s += arr[index]
+            k.append(arr[index])
+            index += 1
+            if s == target:
+                break
+        if sum(l) == sum(m) == sum(k) == target:
+            return True
+        return False
+        
